@@ -23,13 +23,21 @@ function get_quote() {
         type: 'POST',
         crossDomain: true,
         url: 'https://api.postmates.com/v1/customers/cus_K_2kliqDxo-EI-/delivery_quotes',
+        headers: {
+            "Authorization": "Basic " + btoa("03d2edd7-448b-4326-9ba6-7f465a683cae:")
+        },
         data: {
-            "Api-Key": "cfbd0d3c-7f9c-4c0e-a9e0-f5e78310d5bb",
+            "api-key": "03d2edd7-448b-4326-9ba6-7f465a683cae",
+            "username": "03d2edd7-448b-4326-9ba6-7f465a683cae",
+            "password": "",
             "Content-Type": "application/json",
             "dropoff_address": "20 McAllister St, San Francisco, CA 94102",
             "pickup_address": "101 Market St, San Francisco, CA 94105"
         },
-        dataType: 'jsonp',
+        dataType: 'json',
+        beforeSend: function( xhr ) {
+            xhr.overrideMimeType( "text/plain; charset=x-user-defined" );
+        },
         jsonpCallback :  'callback', 
         success:function(data) {
             console.log(data);
