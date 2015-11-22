@@ -24,11 +24,11 @@ function get_quote() {
         crossDomain: true,
         url: 'https://api.postmates.com/v1/customers/cus_K_2kliqDxo-EI-/delivery_quotes',
         headers: {
-            "Authorization": "Basic " + btoa("03d2edd7-448b-4326-9ba6-7f465a683cae:")
+            "Authorization": "Basic " + btoa("e8c71ef3-a56c-40ce-be76-71113b198919:")
         },
         data: {
-            "api-key": "03d2edd7-448b-4326-9ba6-7f465a683cae",
-            "username": "03d2edd7-448b-4326-9ba6-7f465a683cae",
+            "api-key": "e8c71ef3-a56c-40ce-be76-71113b198919",
+            "username": "e8c71ef3-a56c-40ce-be76-71113b198919",
             "password": "",
             "Content-Type": "application/json",
             "dropoff_address": "20 McAllister St, San Francisco, CA 94102",
@@ -36,6 +36,8 @@ function get_quote() {
         },
         dataType: 'json',
         beforeSend: function( xhr ) {
+            // xhr.withCredentials = true;
+            // xhr.setRequestHeader("Authorization", "Basic " + btoa("03d2edd7-448b-4326-9ba6-7f465a683cae:"));
             xhr.overrideMimeType( "text/plain; charset=x-user-defined" );
         },
         jsonpCallback :  'callback', 
