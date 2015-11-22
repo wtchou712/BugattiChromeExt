@@ -5,10 +5,11 @@ $(document).ready(function() {
         $('#main').append("<button class='ui-btn' id='" + id + "' >" + food_item + i + "</button>");
         var newlistener = document.getElementById(""+ id +"").addEventListener('click', function(){
             get_quote();
+            minutes = 10;
             var opt = {
               type: "basic",
-              title: "SEXY BITCH",
-              message: "YO, A BURRITO WAS FUCKING ORDERED",
+              title: "Order Confirmation",
+              message: "Your order for " + food_item + " has been made and will arrive in " + minutes + " minutes.",
               iconUrl: "icon.png"
             };
             chrome.notifications.create(opt, function(){});
