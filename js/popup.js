@@ -5,6 +5,13 @@ $(document).ready(function() {
         $('#main').append("<button class='ui-btn' id='" + id + "' >" + food_item + i + "</button>");
         var newlistener = document.getElementById(""+ id +"").addEventListener('click', function(){
             get_quote();
+            var opt = {
+              type: "basic",
+              title: "SEXY BITCH",
+              message: "YO, A BURRITO WAS FUCKING ORDERED",
+              iconUrl: "icon.png"
+            };
+            chrome.notifications.create(opt, function(){});
             $("#main").append("<p>" + "Your order for " + food_item + " has been submitted</p>");
         });
     }    
