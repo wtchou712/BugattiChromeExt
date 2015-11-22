@@ -5,6 +5,12 @@ body {
     font-family: Montserrat;
 }
 
+.align-middle {
+  margin-left: auto;
+  margin-right: auto;
+  display:block;
+}
+
 .textfield {
     display: block;
     margin-left: auto;
