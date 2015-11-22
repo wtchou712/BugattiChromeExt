@@ -2,10 +2,9 @@
 
 body {
     background-color: #FFF;
+    font-family: Montserrat;
 }
-p {
-  font-family: Montserrat;
-}
+
 .ui-btn {
     /* placing */
     margin-top: 10px;
