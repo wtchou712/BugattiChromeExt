@@ -11,18 +11,15 @@ $(document).ready(function() {
     }    
 });
 
-function submitReq() {
-    $('.submit').click(function(){
-        $('button').html('');
-        $('button').removeClass('submit');    
-        $('button').addClass('loader');
-        setTimeout(function() {
-            $('button').removeClass('loader');
-            $('button').addClass('success');
-            $('button').removeClass('submit');
-            $('button').html('<i class="ion-checkmark-round"></i>');
-       }, 2000);   
-     });
+function get_quote() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+      document.getElementById("demo").innerHTML = xhttp.responseText;
+    }
+  };
+  xhttp.open("POST", "https://api.postmates.com/v1/customers/cus_abc123/delivery_quotes", true);
+  xhttp.send();
 }
 
 // document.addEventListener('DOMContentLoaded', function () {
