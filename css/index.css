@@ -3,7 +3,9 @@
 body {
     background-color: #FFF;
 }
-
+p {
+  font-family: Montserrat;
+}
 .ui-btn {
     /* placing */
     margin-top: 10px;
@@ -48,25 +50,6 @@ body {
     transition: 0.4s;
     outline-style: none;
     cursor: pointer;
-}
-
-.loader {
-    /* placing */
-    margin-top: 150px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    /* end of placing */
-    height: 60px;
-    width: 60px;
-    border-radius: 50%;
-    background-color: transparent;
-    border: 4px solid #eee;
-    border-top: 4px solid #1ecd97;
-    color: #FFF; /* Yes it's useless */
-    outline-style: none;
-    transform: rotate(360deg);
-    transition: 0.6s;
 }
 
 i {
