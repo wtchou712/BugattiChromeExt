@@ -1,17 +1,56 @@
 $(document).ready(function() {
-    chrome.browserAction.onClicked.addListener(function (tab) {
-        alert("hey");
-    });
+    for(var i = 0; i < 3; i++){
+        var id = i;
+        var food_item= 'button';
+        $('#main').append("<button class='ui-btn' id='" + id + "' >" + food_item + i + "</button>");
+        var newlistener = document.getElementById(""+ id +"").addEventListener('click', function(){
+            // alert("asjfh");
+            $("#main").append("<p>" + "Your order for " + food_item + " has been submitted</p>");
 
-    chrome.browserAction.onClicked.addListener(function (tab) { //Fired when User Clicks ICON
-        if (tab.url.indexOf("https://www.google.co.in/") != -1) { // Inspect whether the place where user clicked matches with our list of URL
-            chrome.tabs.executeScript(tab.id, {
-                "file": "contentscript.js"
-            }, function () { // Execute your code
-                console.log("Script Executed .. "); // Notification on Completion
-            });
-        }
-    });
+        });
+    }    
+});
+// document.addEventListener('DOMContentLoaded', function () {
+//     var buttons = document.querySelectorAll('button');
+//     for (var i = 0; i < buttons.length; i++) {
+//     buttons[i].addEventListener('click', getAjax);
+//   }
+// });
+
+// var buttons = document.getElementsByClassName("ui-btn");
+// for(var i = 0; i < buttons.length; i++) {
+//       buttons[i].addEventListener('click', function() {
+//         chrome.tabs.getSelected(null, function(tab) {
+//           d = document;
+//           var f = d.createElement('form');
+//           f.action = 'http://gtmetrix.com/analyze.html?bm';
+//           f.method = 'post';
+//           var i = d.createElement('input');
+//           i.type = 'hidden';
+//           i.name = 'url';
+//           i.value = tab.url;
+//           f.appendChild(i);
+//           d.body.appendChild(f);
+//           f.submit();
+//         });
+//       }, false);
+// }
+
+
+    // chrome.browserAction.onClicked.addListener(function (tab) {
+    //     createNotification();
+    // });
+
+    // function createNotification(){
+    // var opt = {type: "basic",title: "Your Title",message: "Your message",iconUrl: "your_icon.png"}
+    // chrome.notifications.create("notificationName",opt,function(){});
+
+    // //include this line if you want to clear the notification after 5 seconds
+    // setTimeout(function(){chrome.notifications.clear("notificationName",function(){});},5000);
+    // }
+
+
+ 
     // for(var i=0; i < 3; i++) {
     //     var id = i;
     //     var buttonName= 'button';
@@ -53,8 +92,4 @@ $(document).ready(function() {
     //   }
 
     // }
-
-    
-});
-
 
