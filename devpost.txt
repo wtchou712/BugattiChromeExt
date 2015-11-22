@@ -1,6 +1,6 @@
-Bugatti is a Chrome extension and web page that allows users to one-click order postmates delivery.
+Because sometimes even Grubhub or normal Postmates isn't fast enough to match the needs of your stomach. To help you get there like a boss, Bugatti is a Chrome extension and web app that lets you make one-click Postmates deliveries.
 
-The web page allows users to create and customize their favorite foods, which are then saved to their account. The Chrome extension will keep track of the users favorite foods so that they can instantly order from the extension with just one click. The user is prompted of their order confirmation, time estimate, and phone number.
+Our web app lets you create an account and save your favorite meals and places to eat. Once that simple setup is done, the Chrome extension can make INSTANT, ONE-CLICK orders of your favorite foods from a widget in Chrome. You'll receive confirmation and some additional info once your order is placed!
 
 Technical details: 
-The web page stores user information and favorite foods onto a database which the extension accesses. When a user clicks the extension, they will be prompted to login, or if they are already logged in, a list of their favorite foods will be loaded. Once the user clicks a favorite food, the extension will send a request to the server. The server then sends a request through the Postmates API to fulfill a delivery request, and then sends the delivery information back to the extension. The delivery information is used to prompt the user with an order confirmation, delivery time estimate, and cost. 
+It seems obvious, but our app uses the Postmates API to place rapid orders. We also hosted our web app on Microsoft Azure, and technologies/frameworks we used include Node.js, Express, MongoDB, Jade, Sass, and jQuery. 
