@@ -13,12 +13,15 @@ $(document).ready(function() {
 
 function get_quote() {
   var xhttp = new XMLHttpRequest();
+
   xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
       document.getElementById("demo").innerHTML = xhttp.responseText;
     }
   };
   xhttp.open("POST", "https://api.postmates.com/v1/customers/cus_abc123/delivery_quotes", true);
+  xhttp.setRequestHeader("dropoff_address", "20 McAllister St, San Francisco, CA 94102" );
+  xhttp.setRequestHeader("pickup_address", "101 Market St, San Francisco, CA 94105");
   xhttp.send();
 }
 
