@@ -1,201 +1,74 @@
-/*#bbbbbb: #bbbbbb;
-* {
-  font-family: 'Roboto', sans-serif;
-}
-.container {
-  position: absolute;
-  top:50%;
-  left:50%;
-  margin-left: -65px;
-  margin-top: -20px;
-  width: 130px;
-  height: 40px;
-  text-align: center;
-}
-button {
-  outline:none;
-  height: 40px;
-  text-align: center;
-  width: 130px;
-  border-radius:40px;
-  background: #fff;
-  border: 2px solid #1ECD97;
-  color:#1ECD97;
-  letter-spacing:1px;
-  text-shadow:0;
-  font:{
-    size:12px;
-    weight:bold;
-  }
-  cursor: pointer;
-  transition: all 0.25s ease;
-  &:hover {
-    color:white;
-    background: #1ECD97;
-  }
-  &:active {
-    //letter-spacing: 2px;
-    letter-spacing: 2px ;
-  }
-  &:after {
-    content:"SUBMIT";
-  }
-}
-.onclic {
-  width: 40px;
-  border-color:#bbbbbb;
-  border-width:3px;
-  font-size:0;
-  border-left-color:#1ECD97;
-  animation: rotating 2s 0.25s linear infinite;
-
-  &:after {
-    content:"";
-  }
-  &:hover {
-    color:#1ECD97;
-    background: white;
-  }
-}
-.validate {
-  font-size:13px;
-  color: white;
-  background: #1ECD97;
-  &:after {
-    font-family:'FontAwesome';
-    content:"\f00c";
-  }
-}
-
-@keyframes rotating {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}*/
-
-@import url(http://fonts.googleapis.com/css?family=Raleway:800,400);
+@import url(http://fonts.googleapis.com/css?family=Montserrat:700);
 
 body {
-  margin: 0;
-  top: 0;
-  background: #B2EBF2;
+    background-color: #FFF;
 }
 
-h3 {
-  color: #fff;
-  font-family: Raleway, Helvetica, sans-serif;
-  font-size: 2rem;
-  font-weight: 400;
+.ui-btn {
+    /* placing */
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* end of placing */
+    height: 40px;
+    width: 130px;
+    background-color: #FFF;
+    border: 2px solid #1ECD97;
+    border-radius: 50px;
+    color: #1ECD97;
+    font-size: 14px;
+    font-family: Montserrat;
+    transition: 0.4s;
+    outline-style: none;
+    cursor: pointer;
 }
 
-p {
-  color: #00BCD4;
-  font-family: Raleway, Helvetica, sans-serif;
-  font-size: 1.2rem;
-  font-weight: 400;
+.ui-btn:hover {
+    background-color: #1ECD97;
+    color: #FFF;
+    transition: 0.4s;
 }
 
-.button {
-  position: relative;
-  height: 60px;
-  width: 200px;
-  background: #00BCD4;
-  border-radius: 8px;
-  text-align: center;
-  margin: 200px auto 0 auto;
-  cursor: pointer;
-  overflow: hidden;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+.success {
+    /* placing */
+    margin-top: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* end of placing */
+    height: 60px;
+    width: 150px;
+    background-color: #1ECD97;
+    color: #FFF;
+    border: 2px solid #1ECD97;
+    border-radius: 50px;
+    font-size: 14px;
+    font-family: Montserrat;
+    transition: 0.4s;
+    outline-style: none;
+    cursor: pointer;
 }
 
-.submit,
-.arrow {
-  display: inline-block;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  transition: all 0.2s ease;
+.loader {
+    /* placing */
+    margin-top: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* end of placing */
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 4px solid #eee;
+    border-top: 4px solid #1ecd97;
+    color: #FFF; /* Yes it's useless */
+    outline-style: none;
+    transform: rotate(360deg);
+    transition: 0.6s;
 }
 
-.submit {
-  text-transform: uppercase;
-  margin: 14px 0 0 26px;
-}
-
-.arrow {
-  position: relative;
-  top: -3px;
-  opacity: 0;
-}
-
-.line {
-  height: 3px;
-  width: 20px;
-  border-radius: 6px;
-  background: #fff;
-}
-
-.top {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-.bottom {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  margin-top: 10px;
-}
-
-.instructions {
-  text-align: center;
-  margin: 20px auto;
-}
-
-.button:active {
-  -webkit-transform: scale(1.3);
-  -moz-transform: scale(1.3);
-  transform: scale(1.3);
-}
-
-.button.hover .submit {
-  -webkit-transform: translateX(-90px);
-  -moz-transform: translateX(-90px);
-  transform: translateX(-90px);
-  opacity: 0; 
-}
-
-.button.hover .arrow {
-  -webkit-transform: translateX(-70px);
-  -moz-transform: translateX(-70px);
-  transform: translateX(-70px);
-  opacity: 1;
-}
-
-.button.active .arrow {
-  opacity: 1;
-  -webkit-transform: rotate(90deg) translateY(70px);
-  -moz-transform: rotate(90deg) translateY(70px);
-  transform: rotate(90deg) translateY(70px);
-}
-
-.button.active {
-  background: #4CAF50;
-}
-
-.button.active .submit {
-  opacity: 0;
-}
-
-.button.active .top {
-  width: 34px;
-}
-
-.button.active .bottom {
-  margin: 14px 0 0 12px;
+i {
+    font-size: 25px;
 }

@@ -5,10 +5,25 @@ $(document).ready(function() {
         $('#main').append("<button class='ui-btn' id='" + id + "' >" + food_item + i + "</button>");
         var newlistener = document.getElementById(""+ id +"").addEventListener('click', function(){
             // alert("asjfh");
+            submitReq();
             $("#main").append("<p>" + "Your order for " + food_item + " has been submitted</p>");
         });
     }    
 });
+
+function submitReq() {
+    $('.submit').click(function(){
+        $('button').html('');
+        $('button').removeClass('submit');    
+        $('button').addClass('loader');
+        setTimeout(function() {
+            $('button').removeClass('loader');
+            $('button').addClass('success');
+            $('button').removeClass('submit');
+            $('button').html('<i class="ion-checkmark-round"></i>');
+       }, 2000);   
+     });
+}
 
 // document.addEventListener('DOMContentLoaded', function () {
 //     var buttons = document.querySelectorAll('button');
