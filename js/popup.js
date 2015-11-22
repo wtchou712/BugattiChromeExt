@@ -1,22 +1,27 @@
-$(document).ready(function() {
-    for(var i = 0; i < 3; i++){
-        var id = i;
-        var food_item= 'button';
-        $('#main').append("<button class='ui-btn' id='" + id + "' >" + food_item + i + "</button>");
-        var newlistener = document.getElementById(""+ id +"").addEventListener('click', function(){
-            get_quote();
-            minutes = 10;
-            var opt = {
-              type: "basic",
-              title: "Order Confirmation",
-              message: "Your order for " + food_item + " has been made and will arrive in " + minutes + " minutes.",
-              iconUrl: "icon.png"
-            };
-            chrome.notifications.create(opt, function(){});
-            $("#main").append("<p>" + "Your order for " + food_item + " has been submitted</p>");
-        });
-    }    
+$(document).ready(function() {  
+    document.getElementById("submitbtn").addEventListener('click', function(){
+        $(".loginform").remove();
+        for(var i = 0; i < 3; i++){
+            var id = i;
+            var food_item= 'button';
+            $('#main').append("<button class='ui-btn' id='" + id + "' >" + food_item + i + "</button>");
+            var newlistener = document.getElementById(""+ id +"").addEventListener('click', function(){
+                get_quote();
+                minutes = 10;
+                var opt = {
+                  type: "basic",
+                  title: "Order Confirmation",
+                  message: "Your order for " + food_item + " has been made and will arrive in " + minutes + " minutes.",
+                  iconUrl: "icon.png"
+                };
+                chrome.notifications.create(opt, function(){});
+                $("#main").append("<p>" + "Your order for " + food_item + " has been submitted</p>");
+            });
+        } 
+    });
+
 });
+
 
 function get_quote() {
     $.ajax({
