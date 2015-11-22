@@ -4,26 +4,52 @@ $(document).ready(function() {
         var food_item= 'button';
         $('#main').append("<button class='ui-btn' id='" + id + "' >" + food_item + i + "</button>");
         var newlistener = document.getElementById(""+ id +"").addEventListener('click', function(){
-            // alert("asjfh");
-            submitReq();
+            get_quote();
             $("#main").append("<p>" + "Your order for " + food_item + " has been submitted</p>");
         });
     }    
 });
 
 function get_quote() {
-  var xhttp = new XMLHttpRequest();
-
-  xhttp.onreadystatechange = function() {
-    if (xhttp.readyState == 4 && xhttp.status == 200) {
-      document.getElementById("demo").innerHTML = xhttp.responseText;
-    }
-  };
-  xhttp.open("POST", "https://api.postmates.com/v1/customers/cus_abc123/delivery_quotes", true);
-  xhttp.setRequestHeader("dropoff_address", "20 McAllister St, San Francisco, CA 94102" );
-  xhttp.setRequestHeader("pickup_address", "101 Market St, San Francisco, CA 94105");
-  xhttp.send();
+    $.ajax({
+        type: 'POST',
+        crossDomain: true,
+        url: 'https://api.postmates.com/v1/customers/cus_K_2kliqDxo-EI-/delivery_quotes',
+        data: {
+            "Api-Key": "cfbd0d3c-7f9c-4c0e-a9e0-f5e78310d5bb",
+            "Content-Type": "application/json",
+            "dropoff_address": "20 McAllister St, San Francisco, CA 94102",
+            "pickup_address": "101 Market St, San Francisco, CA 94105"
+        },
+        dataType: 'jsonp',
+        jsonpCallback :  'callback', 
+        success:function(data) {
+            console.log(data);
+        },
+        error:function(data) {
+            console.log("error");
+        }
+    });
 }
+
+// function get_quote() {
+//   var xhttp = new XMLHttpRequest();
+
+//   xhttp.onreadystatechange = function() {
+//     if (xhttp.readyState == 4 && xhttp.status == 200) {
+//         // $('#main').append("<p>" + xhttp.responseText + "</p>");
+//         console.log(xhttp.responseText);
+//     }
+//   };
+
+//   xhttp.open("POST", "https://api.postmates.com/v1/customers/cus_K_2kliqDxo-EI-/delivery_quotes", true);
+//   xhttp.setRequestHeader("dropoff_address", "20 McAllister St, San Francisco, CA 94102" );
+//   xhttp.setRequestHeader("pickup_address", "101 Market St, San Francisco, CA 94105");
+//   xhttp.setRequestHeader('Content-Type', 'application/json');
+//   xhttp.setRequestHeader('Api-Key', 'cfbd0d3c-7f9c-4c0e-a9e0-f5e78310d5bb');
+
+//   xhttp.send();
+// }
 
 // document.addEventListener('DOMContentLoaded', function () {
 //     var buttons = document.querySelectorAll('button');

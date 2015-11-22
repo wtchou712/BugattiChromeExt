@@ -12,6 +12,7 @@
         "16": "icon.png"
     },
     "permissions": [
-     "activeTab"
+        "https://www.api.postmates.com",
+        "http://www.api.postmates.com"
     ]
 }
