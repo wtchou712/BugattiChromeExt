@@ -6,10 +6,10 @@ $(document).ready(function() {
         var newlistener = document.getElementById(""+ id +"").addEventListener('click', function(){
             // alert("asjfh");
             $("#main").append("<p>" + "Your order for " + food_item + " has been submitted</p>");
-
         });
     }    
 });
+
 // document.addEventListener('DOMContentLoaded', function () {
 //     var buttons = document.querySelectorAll('button');
 //     for (var i = 0; i < buttons.length; i++) {
