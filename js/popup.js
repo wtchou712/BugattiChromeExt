@@ -4,9 +4,6 @@ $(document).ready(function() {
     $.get("http://instarito.azurewebsites.net/extension/thomas.yt.huang@gmail.com/favorites", function( data ) {
         food_favorites = data;
     });
-
-
-
     document.getElementById("submitbtn").addEventListener('click', function(){
         $(".loginform").remove();
         for(var i = 0; i < food_favorites.length; i++){

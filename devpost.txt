@@ -4,3 +4,8 @@ Our web app lets you create an account and save your favorite meals and places t
 
 Technical details: 
 It seems obvious, but our app uses the Postmates API to place rapid orders. We also hosted our web app on Microsoft Azure, and technologies/frameworks we used include Node.js, Express, MongoDB, Jade, Sass, and jQuery. 
+
+
+Future things to work at:
+-Figure out CORS without messing with web security 
+-Prevent bad inputs/ have more user validations 
